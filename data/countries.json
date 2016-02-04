@@ -1,0 +1,50 @@
+[{
+    "id": 1,
+    "level": 1,
+    "name": "Algeria"
+},
+{
+    "id": 2,
+    "level": 1,
+    "name": "Armenia"
+},
+{
+    "id": 3,
+    "level": 1,
+    "name": "Bulgaria"
+},
+{
+    "id": 4,
+    "level": 1,
+    "name": "North Korea"
+},
+{
+    "id": 5,
+    "level": 1,
+    "name": "Serbia"
+},
+{
+    "id": 6,
+    "level": 2,
+    "name": "Afghanistan"
+},
+{
+    "id": 7,
+    "level": 2,
+    "name": "Bahrain"
+},
+{
+    "id": 8,
+    "level": 2,
+    "name": "Hong Kong"
+},
+{
+    "id": 9,
+    "level": 2,
+    "name": "Kazakhstan"
+},
+{
+    "id": 10,
+    "level": 2,
+    "name": "East Timor"
+}]
