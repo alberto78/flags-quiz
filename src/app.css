@@ -1,0 +1,7 @@
+@import '../node_modules/angular/angular-csp.css';
+@import '../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css';
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+.text-center {
+    text-align: center;
+}
