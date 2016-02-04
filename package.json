@@ -1,0 +1,28 @@
+{
+  "name": "flags-quiz",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alberto Chovares",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.4.9",
+    "angular-ui-bootstrap": "^1.1.2",
+    "bootstrap": "^3.3.6"
+  },
+  "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.2",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.3.13",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "style-loader": "^0.13.0",
+    "uglify-loader": "^1.3.0",
+    "webpack": "^1.12.13"
+  }
+}
