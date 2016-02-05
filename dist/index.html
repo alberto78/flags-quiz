@@ -33,8 +33,8 @@
         </div>
         <div class="row padtop">
             <div class="col-xs-6 col-xs-offset-3 text-center">
-                <h1 ng-show="mCtrl.selected_country != mCtrl.options.correct_name" class="wrong">Wrong!</h1>
-                <h1 ng-show="mCtrl.selected_country == mCtrl.options.correct_name" class="great">Great!</h1>
+                <h1 ng-show="mCtrl.selected_country && mCtrl.selected_country != mCtrl.options.correct_name" class="wrong">Wrong!</h1>
+                <h1 ng-show="mCtrl.selected_country && mCtrl.selected_country == mCtrl.options.correct_name" class="great">Great!</h1>
                 <div ng-click="mCtrl.init()" ng-show="mCtrl.selected_country" class="btn btn-info">Play again</div>
             </div>
         </div>

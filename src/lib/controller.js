@@ -3,11 +3,12 @@ class MainController {
         this.mainService = mainService;
 
         this.version = '0.1';
-        this.level = 1;
+        this.level = 0;
 
         this.data = [];
         this.flag = {};
         this.options = {};
+        this.selected_country = '';
 
         var parent = this;
 
@@ -31,15 +32,21 @@ class MainController {
         this.options = this.mainService.get_quiz_options(this.data, this.level, this.flag.id);
     }
 
-    init() {
-        this.setup_levels();
+    reset() {
+        this.selected_country = '';
         this.setup_flag();
         this.setup_options();
     }
 
+    init() {
+        if (!this.level)
+            this.setup_levels();
+
+        this.reset();
+    }
+
     level_changed() {
-        this.setup_flag();
-        this.setup_options();
+        this.reset();
     }
 }
 
