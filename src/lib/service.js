@@ -55,6 +55,39 @@ class MainService {
 
         return flag;
     }
+
+    get_quiz_options(data, lvl, correct_id) {
+
+        var data_by_level = this.get_data_by_level(data, lvl);
+        var names = data_by_level.map(function(item){
+            return item.name;
+        });
+
+        var correct_name = names[correct_id];
+
+        var countries = [];
+        countries.push(correct_name);
+        names.splice(correct_id, 1);
+
+        var rand, i;
+        for (i = 0; i < lvl; i++) {
+            rand = Math.floor(Math.random() * names.length);
+            countries.push(names[rand]);
+            names.splice(rand, 1);
+        }
+
+        rand = Math.floor(Math.random() * countries.length);
+        if (rand) {
+            var tmp = countries[rand];
+            countries[rand] = countries[0];
+            countries[0] = tmp;
+        }
+
+        return {
+            countries: countries,
+            correct_name: correct_name
+        }
+    }
 }
 
 export { MainService }

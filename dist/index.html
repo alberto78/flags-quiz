@@ -23,8 +23,18 @@
             </div>
         </div>
         <div class="row padtop">
-            <div class="col-xs-6 col-xs-offset-3 text-center">
-                What's the country of this flag?
+            <div class="col-xs-3 col-xs-offset-5">
+                Which is the country of this flag?
+                <ul style="list-style-type: none; margin: 0; padding: 0">
+                    <li ng-repeat="op in mCtrl.options.countries">
+                        <input type="radio" name="cntry" ng-model="mCtrl.selected_country" value="{{ op }}">
+                        <span>{{ op }}</span>
+                    </li>
+                </ul>
+                <br>
+                Correct: {{ mCtrl.options.correct_name }}
+                <br>
+                Selected: {{ mCtrl.selected_country || 'None'}}
             </div>
         </div>
     </div>
