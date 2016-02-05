@@ -18,6 +18,20 @@ class MainService {
 
         return deferred.promise;
     }
+
+    get_available_levels(data) {
+
+        var available = data
+            .map(function(item, pos, arr){
+                if (!pos || item.level != arr[pos - 1].level)
+                    return item.level;
+            })
+            .filter(function(item){
+                return item;
+            });
+
+        return available;
+    }
 }
 
 export { MainService }

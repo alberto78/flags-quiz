@@ -14,6 +14,11 @@
         </div>
         <div class="row">
             <div class="col-xs-6 col-xs-offset-3 text-center">
+                <select ng-model="level" ng-options="lvl as ('Level ' + lvl) for lvl in levels" ng-change="level_changed()"></select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3 text-center">
                 <img src="../img/2.png">
             </div>
         </div>
