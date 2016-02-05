@@ -17,24 +17,25 @@
                 <select ng-model="mCtrl.level" ng-options="lvl as ('Level ' + lvl) for lvl in mCtrl.levels" ng-change="mCtrl.level_changed()" class="btn btn-info dropdown-toggle"></select>
             </div>
         </div>
-        <div class="row padtop">
+        <div class="row row-flag padtop">
             <div class="col-xs-6 col-xs-offset-3 text-center">
                 <img ng-src="{{ mCtrl.random_flag }}">
             </div>
         </div>
         <div class="row padtop">
-            <div class="col-xs-3 col-xs-offset-5">
-                Which is the country of this flag?
-                <ul style="list-style-type: none; margin: 0; padding: 0">
-                    <li ng-repeat="op in mCtrl.options.countries">
-                        <input type="radio" name="cntry" ng-model="mCtrl.selected_country" value="{{ op }}">
-                        <span>{{ op }}</span>
-                    </li>
-                </ul>
+            <div class="col-xs-6 col-xs-offset-3 text-center">
+                <h4>Which is the country of this flag?</h4>
                 <br>
-                Correct: {{ mCtrl.options.correct_name }}
-                <br>
-                Selected: {{ mCtrl.selected_country || 'None'}}
+                <div class="btn-group">
+                    <label ng-repeat="op in mCtrl.options.countries" class="btn btn-default" ng-class="{'btn-success': mCtrl.selected_country == op && op == mCtrl.options.correct_name, 'btn-danger': mCtrl.selected_country == op && op != mCtrl.options.correct_name }" ng-model="mCtrl.selected_country" uib-btn-radio="'{{ op }}'" uncheckable>{{ op }}</label>
+                </div>
+            </div>
+        </div>
+        <div class="row padtop">
+            <div class="col-xs-6 col-xs-offset-3 text-center">
+                <h1 ng-show="mCtrl.selected_country != mCtrl.options.correct_name" class="wrong">Wrong!</h1>
+                <h1 ng-show="mCtrl.selected_country == mCtrl.options.correct_name" class="great">Great!</h1>
+                <div ng-click="mCtrl.init()" ng-show="mCtrl.selected_country" class="btn btn-info">Play again</div>
             </div>
         </div>
     </div>

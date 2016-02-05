@@ -8,6 +8,15 @@ body {
 .text-center {
     text-align: center;
 }
-.padtop {
+.row.padtop {
     padding-top: 2em;
+}
+.row.row-flag {
+    height: 90px;
+}
+h1.wrong {
+    color: #990000;
+}
+h1.great {
+    color: #009900;
 }
