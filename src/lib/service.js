@@ -32,6 +32,29 @@ class MainService {
 
         return available;
     }
+
+    get_data_by_level(data, lvl) {
+
+        var lvl_data = data
+            .filter(function(item){
+                return item.level == lvl;
+            });
+
+        return lvl_data;
+    }
+
+    get_random_flag(data, lvl) {
+
+        var data_by_level = this.get_data_by_level(data, lvl);
+        var rand = Math.floor(Math.random() * Object.keys(data_by_level).length);
+
+        var flag = {
+            id: rand,
+            path: '../img/' + data_by_level[rand].id + '.png'
+        };
+
+        return flag;
+    }
 }
 
 export { MainService }
