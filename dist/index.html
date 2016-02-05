@@ -5,21 +5,21 @@
     <title>flags-quiz</title>
     <link type="text/css" rel="stylesheet" href="app.min.css" />
 </head>
-<body ng-cloak ng-controller="mainController">
+<body ng-cloak ng-controller="mainController as mCtrl">
     <div class="container">
         <div class="row padtop">
             <div class="col-xs-6 col-xs-offset-3 text-center">
-                <h1>flags-quiz v{{ version }}</h1>
+                <h1>flags-quiz v{{ mCtrl.version }}</h1>
             </div>
         </div>
         <div class="row padtop">
             <div class="col-xs-6 col-xs-offset-3 text-center">
-                <select ng-model="level" ng-options="lvl as ('Level ' + lvl) for lvl in levels" ng-change="level_changed()" class="btn btn-info dropdown-toggle"></select>
+                <select ng-model="mCtrl.level" ng-options="lvl as ('Level ' + lvl) for lvl in mCtrl.levels" ng-change="mCtrl.level_changed()" class="btn btn-info dropdown-toggle"></select>
             </div>
         </div>
         <div class="row padtop">
             <div class="col-xs-6 col-xs-offset-3 text-center">
-                <img ng-src="{{ random_flag }}">
+                <img ng-src="{{ mCtrl.random_flag }}">
             </div>
         </div>
         <div class="row padtop">
