@@ -2,6 +2,12 @@
 @import '../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css';
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
+body {
+    background: #eee;
+}
 .text-center {
     text-align: center;
+}
+.padtop {
+    padding-top: 2em;
 }
