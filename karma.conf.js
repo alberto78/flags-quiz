@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: './',
 
 
     // frameworks to use
@@ -28,8 +28,20 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        'test/*.js': ['webpack']
     },
 
+    webpack: {
+       module: {
+           loaders: [
+               { test: /\.js/, exclude: /node_modules/, loader: 'babel-loader' }
+           ]
+       },
+       watch: true
+   },
+   webpackServer: {
+       noInfo: true
+   },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
@@ -61,7 +73,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultaneous
